@@ -1,5 +1,4 @@
-```plaintext
-whisper
+whisper @ git+https://github.com/openai/whisper.git
 cohere
 pytube
 python-dotenv

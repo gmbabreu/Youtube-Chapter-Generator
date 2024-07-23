@@ -47,7 +47,7 @@ def save_to_file(filename, content):
 
 
 if __name__ == "__main__":
-    audio_path = r"c:\Users\gabreu\Downloads\GIOVANNA.mp3"
+    audio_path = ""
 
     # Transcribe and segment video
     transcript = transcribe(audio_path)

@@ -38,7 +38,7 @@ This project provides a tool for transcribing audio from YouTube videos and gene
 
 ### Usage
 
-1. Configure the audio_path variable.
+1. Configure the audio_path variable to the path for your audio file.
 2. Run the script:
     ```sh
     python transcribe_and_segment.py

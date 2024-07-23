@@ -11,12 +11,6 @@ This project provides a tool for transcribing audio from YouTube videos and gene
 
 ## Getting Started
 
-### Prerequisites
-
-- Python 3.8 or higher
-- [Whisper](https://github.com/openai/whisper)
-- [Cohere](https://cohere.ai)
-
 ### Installation
 
 1. Clone the repository:
@@ -30,11 +24,24 @@ This project provides a tool for transcribing audio from YouTube videos and gene
     pip install -r requirements.txt
     ```
 
-3. Set up environment variables:
+3. Install FFmpeg:
+    - **Windows**: Download and install FFmpeg from [FFmpeg Windows](https://ffmpeg.org/download.html#build-windows).
+    - **Mac**: Use Homebrew to install FFmpeg:
+      ```sh
+      brew install ffmpeg
+      ```
+    - **Linux**: Use your package manager to install FFmpeg. For example, on Ubuntu:
+      ```sh
+      sudo apt update
+      sudo apt install ffmpeg
+      ```
+
+4. Set up environment variables:
     Create a `.env` file in the root directory and add your Cohere API key:
     ```
     COHERE_API_KEY=your_cohere_api_key
     ```
+
 
 ### Usage
 

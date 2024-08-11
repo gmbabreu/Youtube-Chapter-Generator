@@ -60,7 +60,7 @@ This project provides a tool for transcribing audio from YouTube videos and gene
 1. Choose your transcribing method. To use AssemblyAI you must gain access to their API keys 
 2. Configure the audio_path variable to the path for your audio file.
 3. Decide whether to use an existing transcript. Set the 'use_existing_transcript' variable in the script to True if you want to use an existing 'transcript.txt' file instead of generating a new transcript.
-4. 3. Run one of the scripts:
+4. Run one of the scripts:
     ```sh
     python chapter_generator_whisper.py
     ```

@@ -51,9 +51,15 @@ def save_to_file(filename, content):
 if __name__ == "__main__":
     audio_path = ""
 
-    # Transcribe and segment video
-    transcript = transcribe(audio_path)
-    save_to_file("transcript.txt", transcript)
+     use_existing_transcript = False  # Set this to True to use an existing transcript.txt
+
+    if use_existing_transcript and os.path.exists("transcript.txt"):
+        with open("transcript.txt", "r", encoding="utf-8") as file:
+            transcript = file.read()
+    else:
+        transcript = transcribe(audio_path)
+        save_to_file("transcript.txt", transcript)
+        
     chapters = segment(transcript)
     save_to_file("chapters.txt", chapters)
 

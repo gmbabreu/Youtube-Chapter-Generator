@@ -55,6 +55,17 @@ def segment(transcript):
     )
     return response.text
 
+def generate_hashtags(transcript):
+    co = cohere.Client(COHERE_API_KEY)
+    # Use Cohere's generate endpoint
+    response = co.chat(
+        message=(
+            "Fornecerei um texto transcrito de um vídeo, e você deverá me fornecer hashtags relevantes para compartilhar nas redes sociais. Gere entre 5 e 10 hashtags relacionadas ao conteúdo do vídeo.\n"
+            f"Aqui está o texto: {transcript}\n\n"
+        ),
+    )
+    return response.text
+
 # Saves content to text file
 def save_to_file(filename, content):
     with open(filename, "w", encoding="utf-8") as file:
@@ -76,3 +87,6 @@ if __name__ == "__main__":
     
     chapters = segment(transcript)
     save_to_file("chapters.txt", chapters)
+
+    hashtags = generate_hashtags(transcript)
+    save_to_file("hashtags.txt", hashtags)

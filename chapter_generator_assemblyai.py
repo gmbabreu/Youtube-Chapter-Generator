@@ -76,7 +76,7 @@ if __name__ == "__main__":
     audio_path = ""
     
     # Transcribe and segment video
-     use_existing_transcript = False  # Set this to True to use an existing transcript.txt
+    use_existing_transcript = False  # Set this to True to use an existing transcript.txt
 
     if use_existing_transcript and os.path.exists("transcript.txt"):
         with open("transcript.txt", "r", encoding="utf-8") as file:

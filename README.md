@@ -1,12 +1,14 @@
 # YouTube Chapter Generator (pt-br)
 
-This project provides a tool for transcribing audio from YouTube videos and generating YouTube chapters using Cohere's language models in portuguese. The tool supports transcription using either Whisper or AssemblyAI and adds timestamps every minute for easy segmentation.
+This project provides a tool for transcribing audio from YouTube videos and generating YouTube chapters and relevant hashtags using Cohere's language models in Portuguese. The tool supports transcription using either Whisper or AssemblyAI and adds timestamps every minute for easy segmentation.
+
 
 ## Features
 
 - Download audio from YouTube videos
 - Transcribe audio using Whisper or AssemblyAI
 - Generate YouTube chapters using Cohere's language models
+- Generate relevant social media hashtags using Cohere's language models
 - Save transcriptions and chapters to text files
 
 ## Getting Started
@@ -57,8 +59,16 @@ This project provides a tool for transcribing audio from YouTube videos and gene
 
 1. Choose your transcribing method. To use AssemblyAI you must gain access to their API keys 
 2. Configure the audio_path variable to the path for your audio file.
-3. Run one of the scripts:
+3. Decide whether to use an existing transcript. Set the 'use_existing_transcript' variable in the script to True if you want to use an existing 'transcript.txt' file instead of generating a new transcript.
+4. 3. Run one of the scripts:
     ```sh
     python chapter_generator_whisper.py
     ```
+
+### Output
+
+The script will generate the following files in the root directory:
+- transcript.txt: The transcript of the video.
+- chapters.txt: YouTube chapters generated from the transcript.
+- hashtags.txt: Relevant social media hashtags based on the video content.
 

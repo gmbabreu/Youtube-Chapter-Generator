@@ -1,4 +1,4 @@
-# YouTube Chapter Generator (pt-br)
+# YouTube Content Generator (pt-br)
 
 This project provides a tool for transcribing audio from YouTube videos and generating YouTube chapters and relevant hashtags using Cohere's language models in Portuguese. The tool supports transcription using either Whisper or AssemblyAI and adds timestamps every minute for easy segmentation.
 

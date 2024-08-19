@@ -62,7 +62,7 @@ This project provides a tool for transcribing audio from YouTube videos and gene
 3. Decide whether to use an existing transcript. Set the 'use_existing_transcript' variable in the script to True if you want to use an existing 'transcript.txt' file instead of generating a new transcript.
 4. Run one of the scripts:
     ```sh
-    python chapter_generator_whisper.py
+    python generate_whisper.py
     ```
 
 ### Output

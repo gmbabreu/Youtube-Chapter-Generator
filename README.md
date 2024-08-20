@@ -61,11 +61,12 @@ The script supports two primary modes:
     ```
    - Choose your transcribing method and run the corresponding python file. To use AssemblyAI you must gain access to their API keys
    - The transcript will be saved as ```transcript.txt```, and chapters and hashtags will be generated based on it.
+  
 2. **Read an existing transcript and generate chapters/hashtags**
    ```sh
     python generate_whisper.py read_transcript
     ```
-   - This mode reads the existing transcript.txt in the directory. No transcription is performed, so the AssemblyAI API key is not needed.
+   - This mode reads the existing ```transcript.txt``` in the directory. No transcription is performed, so the AssemblyAI API key is not needed.
 
 
 

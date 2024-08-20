@@ -58,22 +58,36 @@ def save_to_file(filename, content):
     with open(filename, "w", encoding="utf-8") as file:
         file.write(content)
 
-
 if __name__ == "__main__":
-    audio_path = ""
+    parser = argparse.ArgumentParser(description="Generate YouTube chapters and hashtags using Whisper and Cohere.")
+    parser.add_argument("mode", choices=["transcribe", "read_transcript"], help="Choose whether to transcribe a new audio file or read an existing transcript.")
+    parser.add_argument("--audio_path", type=str, help="Path to the audio file to transcribe (required if using 'transcribe').")
+    
+    args = parser.parse_args()
 
-    use_existing_transcript = False  # Set this to True to use an existing transcript.txt
+    if args.mode == "transcribe":
+        if not args.audio_path:
+            print("Error: You must provide --audio_path when using 'transcribe'.")
+            exit(1)
 
-    if use_existing_transcript and os.path.exists("transcript.txt"):
-        with open("transcript.txt", "r", encoding="utf-8") as file:
-            transcript = file.read()
-    else:
-        transcript = transcribe(audio_path)
+        transcript = transcribe(args.audio_path)
         save_to_file("transcript.txt", transcript)
+        print("Transcript saved to transcript.txt")
+    else:  # read_transcript
+        if os.path.exists("transcript.txt"):
+            with open("transcript.txt", "r", encoding="utf-8") as file:
+                transcript = file.read()
+            print("Transcript read from transcript.txt")
+        else:
+            print("No transcript.txt file found. Run the script with 'transcribe' mode to generate a transcript.")
+            exit(1)
         
+    # Generate chapters and hashtags based on the transcript
     chapters = segment(transcript)
     save_to_file("chapters.txt", chapters)
+    print("Chapters saved to chapters.txt")
 
     hashtags = generate_hashtags(transcript)
     save_to_file("hashtags.txt", hashtags)
+    print("Hashtags saved to hashtags.txt")
 

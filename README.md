@@ -54,16 +54,20 @@ This project provides a tool for transcribing audio from YouTube videos and gene
     ```
 
 ### Usage
-
-#### Transcription with Whisper
-
-1. Choose your transcribing method. To use AssemblyAI you must gain access to their API keys 
-2. Configure the audio_path variable to the path for your audio file.
-3. Decide whether to use an existing transcript. Set the 'use_existing_transcript' variable in the script to True if you want to use an existing 'transcript.txt' file instead of generating a new transcript.
-4. Run one of the scripts:
-    ```sh
-    python generate_whisper.py
+The script supports two primary modes:
+1. **Transcribe a new audio file and generate chapters/hashtags**
+   ```sh
+    python generate_whisper.py transcribe --audio_path="path_to_audio_file.mp3"
     ```
+   - Choose your transcribing method and run the corresponding python file. To use AssemblyAI you must gain access to their API keys
+   - The transcript will be saved as ```transcript.txt```, and chapters and hashtags will be generated based on it.
+2. **Read an existing transcript and generate chapters/hashtags**
+   ```sh
+    python generate_whisper.py read_transcript
+    ```
+   - This mode reads the existing transcript.txt in the directory. No transcription is performed, so the AssemblyAI API key is not needed.
+
+
 
 ### Output
 

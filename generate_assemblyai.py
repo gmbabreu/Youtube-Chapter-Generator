@@ -3,6 +3,7 @@ import time
 import assemblyai as aai
 import cohere
 from dotenv import load_dotenv
+import argparse
 
 load_dotenv()
 

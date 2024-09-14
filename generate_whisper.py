@@ -2,6 +2,7 @@ import whisper
 import cohere
 import os
 from dotenv import load_dotenv
+import argparse
 
 load_dotenv()
 API_KEY = os.getenv('COHERE_API_KEY')

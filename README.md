@@ -59,7 +59,7 @@ The script supports two primary modes:
    ```sh
     python generate_whisper.py transcribe --audio_path="path_to_audio_file.mp3"
     ```
-   - Choose your transcribing method and run the corresponding python file. To use AssemblyAI you must gain access to their API keys
+   - Choose your transcribing method and run the corresponding python file. To use AssemblyAI you must gain access to their API keys. Here are the accepted file formats for [AssemblyAI](https://www.assemblyai.com/docs/concepts/faq) 
    - The transcript will be saved as ```transcript.txt```, and chapters and hashtags will be generated based on it.
   
 2. **Read an existing transcript and generate chapters/hashtags**
